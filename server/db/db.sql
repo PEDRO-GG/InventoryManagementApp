@@ -1,4 +1,4 @@
- -- After logging in to DB 'postgres' by user 'postgres' with password, 'password', run the following commands
+-- After logging in to DB 'postgres' by user 'postgres' with password, 'password', run the following commands
 
  CREATE DATABASE inventory_management_app;
 
