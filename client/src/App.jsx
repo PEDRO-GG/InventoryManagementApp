@@ -6,7 +6,7 @@ import { ProductsContextProvider } from "./context/ProductsContext";
 const App = () => {
   return (
     <ProductsContextProvider>
-      <div>
+      <div className="container">
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
