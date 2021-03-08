@@ -8,8 +8,9 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import SimpleMenu from "./SimpleMenu";
 
-export default function BasicTable({ products }) {
+export default function BasicTable({ products, handleDelete, handleUpdate }) {
   const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: theme.palette.common.black,
@@ -59,6 +60,7 @@ export default function BasicTable({ products }) {
             <StyledTableCell align="right">Status</StyledTableCell>
             <StyledTableCell align="right">Total Sold</StyledTableCell>
             <StyledTableCell align="right">Total Revenue</StyledTableCell>
+            <StyledTableCell align="right"></StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -73,9 +75,16 @@ export default function BasicTable({ products }) {
               </StyledTableCell>
               <StyledTableCell align="right">{row.total_sold}</StyledTableCell>
               <StyledTableCell align="right">
+                $
                 {row.total_revenue
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </StyledTableCell>
+              <StyledTableCell align="right">
+                <SimpleMenu
+                  handleDelete={() => handleDelete(row.id)}
+                  handleUpdate={() => handleUpdate(row.id)}
+                ></SimpleMenu>
               </StyledTableCell>
             </StyledTableRow>
           ))}

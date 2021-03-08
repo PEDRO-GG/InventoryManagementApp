@@ -13,11 +13,17 @@ body {
 }
 .container {
   width: 50rem;
-  margin: 10em auto;
+  margin: 5em auto;
   padding: 2em;
   border: 1px solid red;
 }
 h1 {
   text-align: center;
-  font-size: 3em;
+  color: #3f51b5;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
 }
