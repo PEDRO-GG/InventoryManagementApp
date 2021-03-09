@@ -13,18 +13,18 @@ const ProductsTable = () => {
     const fetchData = async () => {
       try {
         const response = await ProductFinder.get("/");
-        console.log(response.data.data);
         setProducts(response.data.data.products);
       } catch (err) {}
     };
 
     fetchData();
-  }, []);
+  }, [setProducts]);
 
   // Make a DELETE api call
   const handleDelete = async (id) => {
     try {
       const response = await ProductFinder.delete(`/${id}`);
+      console.log(response);
       setProducts(
         products.filter((product) => {
           return product.id !== id;
@@ -35,6 +35,7 @@ const ProductsTable = () => {
     }
   };
 
+  // On Update, go to the update page
   const handleUpdate = (id) => {
     history.push(`/products/${id}/update`);
   };

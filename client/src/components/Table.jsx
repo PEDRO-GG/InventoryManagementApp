@@ -49,7 +49,6 @@ export default function BasicTable({ products, handleDelete, handleUpdate }) {
     )
   );
   const classes = useStyles();
-  console.log(rows);
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
@@ -76,9 +75,10 @@ export default function BasicTable({ products, handleDelete, handleUpdate }) {
               <StyledTableCell align="right">{row.total_sold}</StyledTableCell>
               <StyledTableCell align="right">
                 $
-                {row.total_revenue
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                {row.total_revenue &&
+                  row.total_revenue
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
               </StyledTableCell>
               <StyledTableCell align="right">
                 <SimpleMenu

@@ -11,7 +11,11 @@ export default function SimpleMenu({ handleDelete, handleUpdate }) {
   };
 
   const handleClose = (event) => {
-    event.target.childNodes[0].data == "Edit" ? handleUpdate() : handleDelete();
+    try {
+      event.target.childNodes[0].data === "Edit"
+        ? handleUpdate()
+        : handleDelete();
+    } catch (error) {}
     setAnchorEl(null);
   };
 
