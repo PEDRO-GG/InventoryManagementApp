@@ -12,7 +12,7 @@ body {
   font-family: "Roboto";
 }
 .container {
-  width: 50rem;
+  width: 65rem;
   margin: 5em auto;
   padding: 2em;
 }
@@ -26,3 +26,11 @@ h1 {
   align-items: center;
   font-size: 1em;
 }
+.form-row {
+    border: 1px solid black;
+    padding: 10px;
+}
+.col {
+    float: left;
+	padding: 3px;
+}  
